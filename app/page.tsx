@@ -88,23 +88,23 @@ function LeadForm({ variant = "light" }: { variant?: "light" | "dark" }) {
     <div style={{ textAlign: "center", padding: "2rem 0" }}>
       <div style={{ fontSize: "2.5rem", marginBottom: 8 }}>✅</div>
       <p style={{ fontWeight: 700, color: variant === "dark" ? "#fff" : "#1a1a1a" }}>تم الإرسال بنجاح</p>
-      <p style={{ fontSize: ".78rem", color: variant === "dark" ? "rgba(255,255,255,.4)" : "#5A7A6B", marginTop: 6 }}>هنتواصل معاك خلال 24 ساعة</p>
+      <p style={{ fontSize: ".78rem", color: variant === "dark" ? "rgba(255,255,255,.4)" : "#8B7355", marginTop: 6 }}>هنتواصل معاك خلال 24 ساعة</p>
     </div>
   )
   const isDark = variant === "dark"
-  const iBg = isDark ? "rgba(255,255,255,.06)" : "#f4f9f6"
-  const iBorder = isDark ? "rgba(255,255,255,.1)" : "rgba(90,122,107,.15)"
+  const iBg = isDark ? "rgba(255,255,255,.06)" : "#fef8f5"
+  const iBorder = isDark ? "rgba(255,255,255,.1)" : "rgba(255,71,19,.12)"
   const iColor = isDark ? "#fff" : "#1a1a1a"
-  const iPh = isDark ? "rgba(255,255,255,.3)" : "#5A7A6B"
+  const iPh = isDark ? "rgba(255,255,255,.3)" : "#8B7355"
   return (
     <form onSubmit={submit}>
-      <style>{`.fi${variant}::placeholder{color:${iPh}}.fi${variant}:focus{border-color:#1B6B4A!important;box-shadow:0 0 0 3px rgba(27,107,74,.08)!important}`}</style>
+      <style>{`.fi${variant}::placeholder{color:${iPh}}.fi${variant}:focus{border-color:#FF4713!important;box-shadow:0 0 0 3px rgba(255,71,19,.08)!important}`}</style>
       {[{ p: "الاسم الكريم *", k: "name", t: "text" }, { p: "رقم الهاتف *", k: "phone", t: "tel" }].map(f => (
         <input key={f.k} className={`fi${variant}`} type={f.t} placeholder={f.p} value={(form as any)[f.k]}
           onChange={e => setForm({ ...form, [f.k]: e.target.value })} required
           style={{ width: "100%", padding: "14px 16px", marginBottom: 10, background: iBg, border: `1px solid ${iBorder}`, borderRadius: 8, color: iColor, fontSize: ".85rem", outline: "none", fontFamily: "'Almarai',sans-serif", transition: "all .2s", direction: f.k === "phone" ? "ltr" : "rtl" }} />
       ))}
-      <button type="submit" disabled={loading} style={{ width: "100%", padding: "16px", background: "#1B6B4A", color: "#fff", border: "none", borderRadius: 8, fontWeight: 700, fontSize: ".88rem", cursor: "pointer", fontFamily: "'Almarai',sans-serif", opacity: loading ? .7 : 1, transition: "all .2s" }}>
+      <button type="submit" disabled={loading} style={{ width: "100%", padding: "16px", background: "#FF4713", color: "#fff", border: "none", borderRadius: 8, fontWeight: 700, fontSize: ".88rem", cursor: "pointer", fontFamily: "'Almarai',sans-serif", opacity: loading ? .7 : 1, transition: "all .2s" }}>
         {loading ? "جاري الإرسال..." : "سجّل الآن — احصل على البروشور"}
       </button>
     </form>
@@ -200,20 +200,20 @@ export default function Home() {
         backdropFilter: scrolled ? "blur(20px)" : "none",
       }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <div style={{ width: 24, height: 24, background: "#1B6B4A", borderRadius: 4, transform: "rotate(45deg)" }} />
+          <div style={{ width: 24, height: 24, background: "#FF4713", borderRadius: 4, transform: "rotate(45deg)" }} />
           <span style={{ fontFamily: "'Playfair Display',serif", fontSize: "1.05rem", fontWeight: 600, letterSpacing: ".15em", color: scrolled ? "#1a1a1a" : "#fff" }}>TATWEER MISR</span>
         </div>
         <div className="nav-links" style={{ display: "flex", gap: 28, alignItems: "center" }}>
           {[["المشروع", "about"], ["الموقع", "location"], ["الأسعار", "prices"], ["تواصل", "contact"]].map(([l, id]) => (
             <button key={id} onClick={() => scroll(id)} style={{
               background: "none", border: "none", cursor: "pointer", fontSize: ".75rem", fontWeight: 600,
-              color: scrolled ? "#5A7A6B" : "rgba(255,255,255,.6)", letterSpacing: ".06em", transition: "color .2s",
+              color: scrolled ? "#8B7355" : "rgba(255,255,255,.6)", letterSpacing: ".06em", transition: "color .2s",
               fontFamily: "'Almarai',sans-serif",
             }}>{l}</button>
           ))}
           <a href={`tel:${PHONE}`} dir="ltr" style={{ fontSize: ".82rem", fontWeight: 700, color: scrolled ? "#1a1a1a" : "#fff", textDecoration: "none" }}>{PD}</a>
           <button onClick={() => scroll("contact")} style={{
-            background: "#1B6B4A", color: "#fff", border: "none", padding: "10px 20px",
+            background: "#FF4713", color: "#fff", border: "none", padding: "10px 20px",
             fontWeight: 700, fontSize: ".72rem", letterSpacing: ".06em", cursor: "pointer",
             fontFamily: "'Almarai',sans-serif", borderRadius: 6,
           }}>سجّل الآن</button>
@@ -227,7 +227,7 @@ export default function Home() {
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(26,26,26,.95) 0%, rgba(26,26,26,.5) 40%, rgba(26,26,26,.3) 100%)" }} />
 
         <div className="hero-inner" style={{ position: "absolute", bottom: 0, left: 0, right: 0, zIndex: 10, padding: "0 48px 72px", maxWidth: 800 }}>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 8, marginBottom: 20, padding: "7px 16px", background: "rgba(27,107,74,.8)", borderRadius: 20 }}>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 8, marginBottom: 20, padding: "7px 16px", background: "rgba(255,71,19,.8)", borderRadius: 20 }}>
             <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#4ade80", animation: "pulse 1.5s infinite" }} />
             <span style={{ fontSize: ".72rem", fontWeight: 700, color: "#fff" }}>أحدث مشاريع تطوير مصر — رأس الحكمة</span>
           </div>
@@ -235,7 +235,7 @@ export default function Home() {
           <h1 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(3rem,7vw,5.5rem)", fontWeight: 400, color: "#fff", lineHeight: .95, marginBottom: 20 }}>
             SALT<br />
             <span style={{ fontStyle: "italic", color: "rgba(255,255,255,.3)", fontWeight: 300 }}>Experience The</span>{" "}
-            <span style={{ color: "#7ECBA1" }}>Salt Life</span>
+            <span style={{ color: "#FF8B5E" }}>Salt Life</span>
           </h1>
 
           <p style={{ fontSize: ".92rem", color: "rgba(255,255,255,.4)", lineHeight: 1.9, maxWidth: 480, marginBottom: 28 }}>
@@ -243,7 +243,7 @@ export default function Home() {
           </p>
 
           <div style={{ display: "flex", gap: 12 }}>
-            <button onClick={() => scroll("contact")} style={{ padding: "15px 32px", background: "#1B6B4A", color: "#fff", border: "none", borderRadius: 8, fontWeight: 700, fontSize: ".88rem", cursor: "pointer", fontFamily: "'Almarai',sans-serif" }}>سجّل الآن</button>
+            <button onClick={() => scroll("contact")} style={{ padding: "15px 32px", background: "#FF4713", color: "#fff", border: "none", borderRadius: 8, fontWeight: 700, fontSize: ".88rem", cursor: "pointer", fontFamily: "'Almarai',sans-serif" }}>سجّل الآن</button>
             <a href={`${WA}?text=${encodeURIComponent("مرحباً، أنا مهتم بمشروع SALT North Coast من تطوير مصر وأريد معرفة المزيد عن الوحدات المتاحة وأنظمة السداد.")}`} target="_blank" rel="noopener noreferrer"
               style={{ padding: "15px 32px", background: "#25D366", color: "#fff", borderRadius: 8, fontWeight: 700, fontSize: ".88rem", textDecoration: "none" }}>💬 واتساب</a>
           </div>
@@ -254,7 +254,7 @@ export default function Home() {
       <div className="stats-bar" style={{ display: "flex", background: "#1a1a1a" }}>
         {STATS.map((s, i) => (
           <div key={i} style={{ flex: 1, textAlign: "center", padding: "24px 16px", borderLeft: i > 0 ? "1px solid rgba(255,255,255,.06)" : "none" }}>
-            <div style={{ fontFamily: "'Playfair Display',serif", fontSize: "1.6rem", fontWeight: 500, color: "#7ECBA1" }}>{s.val}</div>
+            <div style={{ fontFamily: "'Playfair Display',serif", fontSize: "1.6rem", fontWeight: 500, color: "#FF8B5E" }}>{s.val}</div>
             <div style={{ fontSize: ".65rem", color: "rgba(255,255,255,.3)", marginTop: 4 }}>{s.label}</div>
           </div>
         ))}
@@ -265,9 +265,9 @@ export default function Home() {
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <Reveal>
             <div style={{ textAlign: "center", marginBottom: 40 }}>
-              <p style={{ fontSize: ".7rem", fontWeight: 700, letterSpacing: ".25em", color: "#1B6B4A", marginBottom: 8 }}>TATWEER MISR DEVELOPMENTS</p>
+              <p style={{ fontSize: ".7rem", fontWeight: 700, letterSpacing: ".25em", color: "#FF4713", marginBottom: 8 }}>TATWEER MISR DEVELOPMENTS</p>
               <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: "2.2rem", fontWeight: 500, marginBottom: 12 }}>منتجع SALT في رأس الحكمة</h2>
-              <p style={{ fontSize: ".9rem", color: "#5A7A6B", maxWidth: 650, margin: "0 auto", lineHeight: 1.9 }}>
+              <p style={{ fontSize: ".9rem", color: "#8B7355", maxWidth: 650, margin: "0 auto", lineHeight: 1.9 }}>
                 SALT أحدث مشاريع تطوير مصر على الساحل الشمالي — منتجع ساحلي فاخر في قلب رأس الحكمة على مساحة 294 فدان، مصمم على مصاطب متدرجة بارتفاعات من 9 لـ 33 متر فوق سطح البحر. 90% من الوحدات بإطلالة بحر مباشرة، مع لاجونات كريستالية على 25 فدان، مارينا عالمية، فندق 5 نجوم، ومنطقة تجارية وترفيهية متكاملة.
               </p>
             </div>
@@ -298,26 +298,26 @@ export default function Home() {
             <img src="https://prod-images.nawy.com/processed/compound_image/image/5977/default.webp" alt="SALT Location" style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", inset: 0 }} />
           </div>
           <div className="mp-text" style={{ padding: "56px 48px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-            <p style={{ fontSize: ".68rem", fontWeight: 700, letterSpacing: ".25em", color: "#7ECBA1", marginBottom: 12 }}>STRATEGIC LOCATION</p>
+            <p style={{ fontSize: ".68rem", fontWeight: 700, letterSpacing: ".25em", color: "#FF8B5E", marginBottom: 12 }}>STRATEGIC LOCATION</p>
             <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: "2rem", fontWeight: 500, color: "#fff", lineHeight: 1.15, marginBottom: 16 }}>
               الموقع الاستراتيجي<br /><span style={{ fontStyle: "italic", color: "rgba(255,255,255,.3)" }}>كيلو 185 — رأس الحكمة</span>
             </h2>
-            <div style={{ width: 32, height: 2, background: "#1B6B4A", borderRadius: 2, marginBottom: 20 }} />
+            <div style={{ width: 32, height: 2, background: "#FF4713", borderRadius: 2, marginBottom: 20 }} />
             <p style={{ fontSize: ".88rem", color: "rgba(255,255,255,.45)", lineHeight: 1.9, marginBottom: 28 }}>
               يقع SALT على الكيلو 185 طريق الإسكندرية – مرسى مطروح في قلب رأس الحكمة، على الطريق الساحلي الدولي وبالقرب من طريق الفوكا الجديد.
             </p>
 
             <div className="loc-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}>
               {LOCATION_ITEMS.map((item, i) => (
-                <div key={i} style={{ background: "rgba(255,255,255,.04)", borderRadius: 10, padding: "14px 16px", border: "1px solid rgba(255,255,255,.06)", borderRight: "3px solid #1B6B4A" }}>
-                  <div style={{ fontSize: ".75rem", fontWeight: 700, color: "#7ECBA1", marginBottom: 4 }}>{item.dist}</div>
+                <div key={i} style={{ background: "rgba(255,255,255,.04)", borderRadius: 10, padding: "14px 16px", border: "1px solid rgba(255,255,255,.06)", borderRight: "3px solid #FF4713" }}>
+                  <div style={{ fontSize: ".75rem", fontWeight: 700, color: "#FF8B5E", marginBottom: 4 }}>{item.dist}</div>
                   <div style={{ fontSize: ".72rem", color: "rgba(255,255,255,.5)", lineHeight: 1.6 }}>{item.place}</div>
                 </div>
               ))}
             </div>
 
             <button onClick={() => scroll("contact")} style={{
-              marginTop: 24, padding: "14px 28px", background: "#1B6B4A", color: "#fff", border: "none",
+              marginTop: 24, padding: "14px 28px", background: "#FF4713", color: "#fff", border: "none",
               borderRadius: 8, fontWeight: 700, fontSize: ".85rem", cursor: "pointer", fontFamily: "'Almarai',sans-serif", alignSelf: "flex-start",
             }}>سجّل واحصل على الماستر بلان</button>
           </div>
@@ -329,7 +329,7 @@ export default function Home() {
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <Reveal>
             <div style={{ textAlign: "center", marginBottom: 8 }}>
-              <p style={{ fontSize: ".7rem", fontWeight: 700, letterSpacing: ".25em", color: "#1B6B4A", marginBottom: 8 }}>الأسعار</p>
+              <p style={{ fontSize: ".7rem", fontWeight: 700, letterSpacing: ".25em", color: "#FF4713", marginBottom: 8 }}>الأسعار</p>
               <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: "2rem", fontWeight: 500 }}>الوحدات والأسعار</h2>
             </div>
           </Reveal>
@@ -347,12 +347,12 @@ export default function Home() {
                   display: "flex", justifyContent: "space-between", alignItems: "center",
                   border: "1px solid rgba(0,0,0,.04)", transition: "all .2s",
                 }}
-                  onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(27,107,74,.12)" }}
+                  onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(255,71,19,.12)" }}
                   onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(0,0,0,.04)" }}>
                   <div style={{ flex: 1 }}>
                     <div style={{ fontSize: ".9rem", fontWeight: 700, color: "#1a1a1a", marginBottom: 2 }}>{u.type}</div>
-                    <div style={{ fontSize: ".75rem", color: "#5A7A6B", marginBottom: 2 }}>{u.area}</div>
-                    <div style={{ fontFamily: "'Playfair Display',serif", fontSize: "1.15rem", color: "#1B6B4A", fontWeight: 600 }}>{u.price}</div>
+                    <div style={{ fontSize: ".75rem", color: "#8B7355", marginBottom: 2 }}>{u.area}</div>
+                    <div style={{ fontFamily: "'Playfair Display',serif", fontSize: "1.15rem", color: "#FF4713", fontWeight: 600 }}>{u.price}</div>
                   </div>
                   <div className="u-cta" style={{ display: "flex", gap: 8 }}>
                     <a href={`${WA}?text=${encodeURIComponent(`مرحباً، أنا مهتم بـ ${u.type} في مشروع SALT North Coast من تطوير مصر`)}`}
@@ -361,7 +361,7 @@ export default function Home() {
                       💬 واتساب
                     </a>
                     <button onClick={() => scroll("contact")} style={{
-                      padding: "10px 16px", background: "#1B6B4A", color: "#fff", border: "none",
+                      padding: "10px 16px", background: "#FF4713", color: "#fff", border: "none",
                       fontWeight: 700, fontSize: ".72rem", cursor: "pointer", fontFamily: "'Almarai',sans-serif", borderRadius: 6, whiteSpace: "nowrap",
                     }}>سجّل الآن</button>
                   </div>
@@ -378,10 +378,10 @@ export default function Home() {
                 { t: "النظام الثاني", d: "10% مقدم + 5% بعد 3 شهور", d2: "تقسيط على 8 سنوات", badge: "" },
               ].map((p, i) => (
                 <div key={i} style={{ background: "#fff", borderRadius: 10, padding: "20px", textAlign: "center", border: "1px solid rgba(0,0,0,.04)", position: "relative" }}>
-                  {p.badge && <span style={{ position: "absolute", top: -8, left: "50%", transform: "translateX(-50%)", background: "#1B6B4A", color: "#fff", fontSize: ".6rem", fontWeight: 700, padding: "3px 12px", borderRadius: 10 }}>{p.badge}</span>}
-                  <div style={{ fontSize: ".68rem", fontWeight: 700, letterSpacing: ".1em", color: "#1B6B4A", marginBottom: 6 }}>{p.t}</div>
+                  {p.badge && <span style={{ position: "absolute", top: -8, left: "50%", transform: "translateX(-50%)", background: "#FF4713", color: "#fff", fontSize: ".6rem", fontWeight: 700, padding: "3px 12px", borderRadius: 10 }}>{p.badge}</span>}
+                  <div style={{ fontSize: ".68rem", fontWeight: 700, letterSpacing: ".1em", color: "#FF4713", marginBottom: 6 }}>{p.t}</div>
                   <div style={{ fontSize: ".88rem", fontWeight: 700, marginBottom: 2 }}>{p.d}</div>
-                  <div style={{ fontSize: ".78rem", color: "#5A7A6B" }}>{p.d2}</div>
+                  <div style={{ fontSize: ".78rem", color: "#8B7355" }}>{p.d2}</div>
                 </div>
               ))}
             </div>
@@ -389,13 +389,13 @@ export default function Home() {
 
           <Reveal delay={.2}>
             <div style={{ marginTop: 12, textAlign: "center" }}>
-              <p style={{ fontSize: ".78rem", color: "#5A7A6B" }}>جدية حجز: 100,000 جنيه</p>
+              <p style={{ fontSize: ".78rem", color: "#8B7355" }}>جدية حجز: 100,000 جنيه</p>
             </div>
           </Reveal>
 
           <Reveal delay={.25}>
-            <div style={{ marginTop: 16, background: "rgba(27,107,74,.04)", borderRadius: 8, padding: "14px 20px", border: "1px solid rgba(27,107,74,.08)", textAlign: "center" }}>
-              <span style={{ fontSize: ".82rem", color: "#1B6B4A", fontWeight: 700 }}>احجز وحدتك الآن</span>
+            <div style={{ marginTop: 16, background: "rgba(255,71,19,.04)", borderRadius: 8, padding: "14px 20px", border: "1px solid rgba(255,71,19,.08)", textAlign: "center" }}>
+              <span style={{ fontSize: ".82rem", color: "#FF4713", fontWeight: 700 }}>احجز وحدتك الآن</span>
             </div>
           </Reveal>
         </div>
@@ -408,18 +408,18 @@ export default function Home() {
             <img src="https://prod-images.nawy.com/processed/compound_image/image/5975/default.webp" alt="Tatweer Misr" style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", inset: 0 }} />
           </div>
           <div className="mp-text" style={{ padding: "56px 48px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-            <p style={{ fontSize: ".68rem", fontWeight: 700, letterSpacing: ".25em", color: "#7ECBA1", marginBottom: 12 }}>TATWEER MISR DEVELOPMENTS</p>
+            <p style={{ fontSize: ".68rem", fontWeight: 700, letterSpacing: ".25em", color: "#FF8B5E", marginBottom: 12 }}>TATWEER MISR DEVELOPMENTS</p>
             <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: "2rem", fontWeight: 500, color: "#fff", lineHeight: 1.15, marginBottom: 16 }}>
               عن تطوير مصر<br /><span style={{ fontStyle: "italic", color: "rgba(255,255,255,.3)" }}>منذ 2014</span>
             </h2>
-            <div style={{ width: 32, height: 2, background: "#1B6B4A", borderRadius: 2, marginBottom: 20 }} />
+            <div style={{ width: 32, height: 2, background: "#FF4713", borderRadius: 2, marginBottom: 20 }} />
             <p style={{ fontSize: ".88rem", color: "rgba(255,255,255,.45)", lineHeight: 1.9, marginBottom: 28 }}>
               منذ تأسيسها عام 2014، رسخت تطوير مصر مكانتها كواحدة من أبرز شركات التطوير العقاري في مصر. مشاريع متكاملة في العين السخنة والساحل الشمالي ومدينة المستقبل — تشمل SALT و IL Monte Galala و Fouka Bay و D Bay و Bloomfields و Rivers.
             </p>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
               {[{ v: "7+", l: "مشاريع متكاملة" }, { v: "2014", l: "سنة التأسيس" }, { v: "+25,000", l: "عميل" }, { v: "4", l: "مواقع استراتيجية" }].map((s, i) => (
                 <div key={i} style={{ padding: "14px", background: "rgba(255,255,255,.04)", borderRadius: 10, border: "1px solid rgba(255,255,255,.06)" }}>
-                  <div style={{ fontFamily: "'Playfair Display',serif", fontSize: "1.3rem", fontWeight: 600, color: "#7ECBA1" }}>{s.v}</div>
+                  <div style={{ fontFamily: "'Playfair Display',serif", fontSize: "1.3rem", fontWeight: 600, color: "#FF8B5E" }}>{s.v}</div>
                   <div style={{ fontSize: ".65rem", color: "rgba(255,255,255,.25)", marginTop: 2 }}>{s.l}</div>
                 </div>
               ))}
@@ -431,7 +431,7 @@ export default function Home() {
       {/* ── CONTACT ── */}
       <section id="contact">
         <div className="contact-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "60vh" }}>
-          <div className="c-left" style={{ background: "#1B6B4A", padding: "56px 48px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+          <div className="c-left" style={{ background: "#FF4713", padding: "56px 48px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
             <p style={{ fontSize: ".68rem", fontWeight: 700, letterSpacing: ".25em", color: "rgba(255,255,255,.5)", marginBottom: 12 }}>تواصل معنا</p>
             <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: "2.2rem", fontWeight: 500, color: "#fff", lineHeight: 1.15, marginBottom: 16 }}>
               ابدأ رحلتك<br />في رأس الحكمة
@@ -447,9 +447,9 @@ export default function Home() {
             </div>
           </div>
           <div className="c-right" style={{ background: "#F4F1EC", padding: "56px 48px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-            <p style={{ fontSize: ".7rem", fontWeight: 700, letterSpacing: ".2em", color: "#1B6B4A", marginBottom: 8 }}>سجّل بياناتك</p>
+            <p style={{ fontSize: ".7rem", fontWeight: 700, letterSpacing: ".2em", color: "#FF4713", marginBottom: 8 }}>سجّل بياناتك</p>
             <h3 style={{ fontFamily: "'Playfair Display',serif", fontSize: "1.6rem", fontWeight: 500, marginBottom: 6 }}>احصل على البروشور والأسعار</h3>
-            <p style={{ fontSize: ".78rem", color: "#5A7A6B", marginBottom: 24 }}>فريقنا المتخصص في خدمتك</p>
+            <p style={{ fontSize: ".78rem", color: "#8B7355", marginBottom: 24 }}>فريقنا المتخصص في خدمتك</p>
             <LeadForm />
           </div>
         </div>
@@ -466,8 +466,8 @@ export default function Home() {
       <footer style={{ background: "#1a1a1a", padding: "20px 40px 80px" }}>
         <div className="footer-inner" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <div style={{ width: 18, height: 18, background: "#1B6B4A", borderRadius: 3, transform: "rotate(45deg)" }} />
-            <span style={{ fontFamily: "'Playfair Display',serif", fontSize: ".85rem", letterSpacing: ".15em", color: "#7ECBA1" }}>TATWEER MISR</span>
+            <div style={{ width: 18, height: 18, background: "#FF4713", borderRadius: 3, transform: "rotate(45deg)" }} />
+            <span style={{ fontFamily: "'Playfair Display',serif", fontSize: ".85rem", letterSpacing: ".15em", color: "#FF8B5E" }}>TATWEER MISR</span>
           </div>
           <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
             <button onClick={() => setShowPrivacy(true)} style={{ background: "none", border: "none", color: "rgba(255,255,255,.3)", fontSize: ".6rem", cursor: "pointer", fontFamily: "'Almarai',sans-serif" }}>سياسة الخصوصية</button>
@@ -480,7 +480,7 @@ export default function Home() {
       {showPopup && (
         <div style={{ position: "fixed", inset: 0, zIndex: 200, display: "flex", alignItems: "center", justifyContent: "center", padding: "1rem", background: "rgba(0,0,0,.7)", backdropFilter: "blur(6px)" }}>
           <div style={{ background: "#fff", maxWidth: 400, width: "100%", borderRadius: 16, overflow: "hidden", boxShadow: "0 25px 80px rgba(0,0,0,.3)" }}>
-            <div style={{ background: "#1B6B4A", padding: "24px 28px", color: "#fff", position: "relative" }}>
+            <div style={{ background: "#FF4713", padding: "24px 28px", color: "#fff", position: "relative" }}>
               <button onClick={() => setShowPopup(false)} style={{ position: "absolute", top: 12, left: 16, background: "none", border: "none", color: "rgba(255,255,255,.5)", fontSize: "1.2rem", cursor: "pointer" }}>✕</button>
               <span style={{ fontSize: ".6rem", fontWeight: 700, letterSpacing: ".2em", color: "rgba(255,255,255,.6)", display: "block", marginBottom: 8 }}>SALT — رأس الحكمة</span>
               <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: "1.5rem", fontWeight: 500, lineHeight: 1.15 }}>294 فدان<br /><span style={{ fontWeight: 700 }}>احجز مكانك الآن</span></h2>
@@ -490,20 +490,20 @@ export default function Home() {
                 <div style={{ textAlign: "center", padding: "2rem 0" }}>
                   <div style={{ fontSize: "2.5rem", marginBottom: 8 }}>✅</div>
                   <p style={{ fontWeight: 700 }}>تم التسجيل!</p>
-                  <p style={{ fontSize: ".78rem", color: "#5A7A6B", marginTop: 6 }}>هنتواصل معاك قريباً</p>
-                  <button onClick={() => setShowPopup(false)} style={{ marginTop: 14, padding: "10px 28px", background: "#1B6B4A", color: "#fff", border: "none", fontWeight: 700, cursor: "pointer", borderRadius: 8, fontFamily: "'Almarai',sans-serif" }}>إغلاق</button>
+                  <p style={{ fontSize: ".78rem", color: "#8B7355", marginTop: 6 }}>هنتواصل معاك قريباً</p>
+                  <button onClick={() => setShowPopup(false)} style={{ marginTop: 14, padding: "10px 28px", background: "#FF4713", color: "#fff", border: "none", fontWeight: 700, cursor: "pointer", borderRadius: 8, fontFamily: "'Almarai',sans-serif" }}>إغلاق</button>
                 </div>
               ) : (
                 <form onSubmit={submitPopup}>
-                  <style>{`.pp-i::placeholder{color:#5A7A6B}.pp-i:focus{border-color:#1B6B4A!important}`}</style>
-                  <p style={{ fontSize: ".78rem", color: "#5A7A6B", marginBottom: 14, lineHeight: 1.7 }}>سجّل بياناتك واحصل على البروشور والأسعار</p>
+                  <style>{`.pp-i::placeholder{color:#8B7355}.pp-i:focus{border-color:#FF4713!important}`}</style>
+                  <p style={{ fontSize: ".78rem", color: "#8B7355", marginBottom: 14, lineHeight: 1.7 }}>سجّل بياناتك واحصل على البروشور والأسعار</p>
                   {[{ p: "الاسم الكريم *", k: "name" }, { p: "رقم الهاتف *", k: "phone" }].map(f => (
                     <input key={f.k} className="pp-i" placeholder={f.p} value={(popupForm as any)[f.k]}
                       onChange={e => setPopupForm({ ...popupForm, [f.k]: e.target.value })} required
                       type={f.k === "phone" ? "tel" : "text"}
-                      style={{ width: "100%", padding: "13px 16px", marginBottom: 10, background: "#f4f9f6", border: "1px solid rgba(90,122,107,.15)", borderRadius: 8, fontSize: ".85rem", outline: "none", fontFamily: "'Almarai',sans-serif", direction: f.k === "phone" ? "ltr" : "rtl", color: "#1a1a1a" }} />
+                      style={{ width: "100%", padding: "13px 16px", marginBottom: 10, background: "#fef8f5", border: "1px solid rgba(255,71,19,.15)", borderRadius: 8, fontSize: ".85rem", outline: "none", fontFamily: "'Almarai',sans-serif", direction: f.k === "phone" ? "ltr" : "rtl", color: "#1a1a1a" }} />
                   ))}
-                  <button type="submit" disabled={popupLoading} style={{ width: "100%", padding: "14px", background: "#1B6B4A", color: "#fff", border: "none", borderRadius: 8, fontWeight: 700, fontSize: ".82rem", cursor: "pointer", fontFamily: "'Almarai',sans-serif", opacity: popupLoading ? .7 : 1 }}>
+                  <button type="submit" disabled={popupLoading} style={{ width: "100%", padding: "14px", background: "#FF4713", color: "#fff", border: "none", borderRadius: 8, fontWeight: 700, fontSize: ".82rem", cursor: "pointer", fontFamily: "'Almarai',sans-serif", opacity: popupLoading ? .7 : 1 }}>
                     {popupLoading ? "..." : "🏖 سجّل الآن"}
                   </button>
                   <a href={`${WA}?text=${encodeURIComponent("مرحباً، أنا مهتم بمشروع SALT North Coast من تطوير مصر")}`} target="_blank" rel="noopener noreferrer"
@@ -521,7 +521,7 @@ export default function Home() {
           onClick={() => setShowPrivacy(false)}>
           <div style={{ background: "#fff", maxWidth: 500, width: "100%", borderRadius: 16, overflow: "hidden", maxHeight: "80vh", display: "flex", flexDirection: "column" }}
             onClick={e => e.stopPropagation()}>
-            <div style={{ background: "#1B6B4A", padding: "20px 28px", color: "#fff", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div style={{ background: "#FF4713", padding: "20px 28px", color: "#fff", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <h3 style={{ fontFamily: "'Playfair Display',serif", fontSize: "1.2rem", fontWeight: 500 }}>سياسة الخصوصية</h3>
               <button onClick={() => setShowPrivacy(false)} style={{ background: "none", border: "none", color: "rgba(255,255,255,.5)", fontSize: "1.2rem", cursor: "pointer" }}>✕</button>
             </div>
@@ -543,13 +543,13 @@ export default function Home() {
         <div style={{ position: "fixed", bottom: 60, left: 16, right: 16, zIndex: 150, background: "#1a1a1a", borderRadius: 12, padding: "16px 20px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, boxShadow: "0 10px 40px rgba(0,0,0,.3)" }}>
           <p style={{ fontSize: ".72rem", color: "rgba(255,255,255,.6)", flex: 1 }}>نستخدم ملفات تعريف الارتباط لتحسين تجربتك. بالاستمرار في التصفح فإنك توافق على استخدامنا لها.</p>
           <button onClick={() => { setShowCookie(false); try { localStorage.setItem("salt_cookie", "1") } catch { } }}
-            style={{ padding: "8px 20px", background: "#1B6B4A", color: "#fff", border: "none", borderRadius: 6, fontWeight: 700, fontSize: ".72rem", cursor: "pointer", fontFamily: "'Almarai',sans-serif", whiteSpace: "nowrap" }}>موافق</button>
+            style={{ padding: "8px 20px", background: "#FF4713", color: "#fff", border: "none", borderRadius: 6, fontWeight: 700, fontSize: ".72rem", cursor: "pointer", fontFamily: "'Almarai',sans-serif", whiteSpace: "nowrap" }}>موافق</button>
         </div>
       )}
 
       {/* FLOAT BUTTONS */}
       <div className="float-btns" style={{ position: "fixed", bottom: 80, left: 24, zIndex: 50, display: "flex", flexDirection: "column", gap: 10 }}>
-        <a href={`tel:${PHONE}`} style={{ width: 48, height: 48, borderRadius: 12, background: "#1B6B4A", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 20px rgba(27,107,74,.3)", textDecoration: "none" }}>
+        <a href={`tel:${PHONE}`} style={{ width: 48, height: 48, borderRadius: 12, background: "#FF4713", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 20px rgba(255,71,19,.3)", textDecoration: "none" }}>
           <svg viewBox="0 0 24 24" style={{ width: 20, height: 20, fill: "#fff" }}><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" /></svg>
         </a>
         <a href={`${WA}?text=${encodeURIComponent("مرحباً، أنا مهتم بمشروع SALT North Coast من تطوير مصر")}`} target="_blank" rel="noopener noreferrer"
@@ -560,7 +560,7 @@ export default function Home() {
 
       {/* MOBILE BAR */}
       <div style={{ position: "fixed", bottom: 0, left: 0, right: 0, zIndex: 40, display: "grid", gridTemplateColumns: "1fr 1fr" }}>
-        <a href={`tel:${PHONE}`} style={{ padding: "16px", background: "#1B6B4A", color: "#fff", fontWeight: 700, fontSize: ".78rem", textAlign: "center", textDecoration: "none" }}>📞 اتصل الآن</a>
+        <a href={`tel:${PHONE}`} style={{ padding: "16px", background: "#FF4713", color: "#fff", fontWeight: 700, fontSize: ".78rem", textAlign: "center", textDecoration: "none" }}>📞 اتصل الآن</a>
         <a href={`${WA}?text=${encodeURIComponent("مرحباً، أنا مهتم بمشروع SALT North Coast من تطوير مصر")}`} target="_blank" rel="noopener noreferrer"
           style={{ padding: "16px", background: "#25D366", color: "#fff", fontWeight: 700, fontSize: ".78rem", textAlign: "center", textDecoration: "none" }}>💬 واتساب</a>
       </div>
