@@ -9,7 +9,7 @@ export default function ThankYou() {
   useEffect(() => {
     try {
       if (typeof window !== "undefined" && (window as any).gtag) {
-        // (window as any).gtag("event", "conversion", { send_to: "AW-XXXXXXXXXX/XXXXX" })
+        (window as any).gtag("event", "conversion", { send_to: "AW-18307172737/a1oUCMbDs84cEIGTxZlE", value: 1.0, currency: "EGP" })
       }
     } catch { }
   }, [])

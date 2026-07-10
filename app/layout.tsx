@@ -17,14 +17,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ar" dir="rtl" suppressHydrationWarning>
       <head>
-        {/* Google Ads gtag — replace AW-XXXXXXXXXX with your tag */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18307172737" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              // gtag('config', 'AW-XXXXXXXXXX');
+              gtag('config', 'AW-18307172737');
             `,
           }}
         />
